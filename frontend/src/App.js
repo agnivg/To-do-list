@@ -1,9 +1,10 @@
 import React from 'react'
+import LoginSignup from './pages/user/LoginSignup/LoginSignup';
 
 const App=()=>{
   return (
     <>
-      <h1>Welcome to To-do app</h1>
+      <LoginSignup />
     </>           
   )
 }
