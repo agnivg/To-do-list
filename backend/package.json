@@ -4,12 +4,25 @@
   "description": "Backend for our to-do list",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "author": "Agniv Ghosh",
+  "contributors": [
+    {
+      "name": "Shubham Sareliya",
+      "email": "sareliashubham9999@gmail.com",
+      "url": "https://github.com/s-shubham-22"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
