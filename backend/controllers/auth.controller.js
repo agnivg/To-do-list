@@ -59,33 +59,36 @@ exports.logoutUser = async function (req, res) {
 }
 
 exports.signupUser = async function (req, res) {
-    console.log(req.body)
     const { username, email, password, confirm_password } = req.body
     try {
-        let user = await User.findOne({ username: username })
-        if (user) return res.json({ err: 'User Already Exist' })
+        let user = await User.findOne({
+            $or: [{ username: username }, { email: email }],
+        })
+        if (user) return res.json({ err: 'Username or Email Already Exist' })
         if (password !== confirm_password) {
             return res.json({
                 err: 'Password does not match with Confirm Password',
             })
         }
 
-        let salt = await bcrypt.genSaltSync(10)
-        let hashed_password = await bcrypt.hash(password, salt)
+        let hashed_password = await bcrypt.hash(password, 10)
 
         user = await {
             username: username,
             email: email,
             password: hashed_password,
-            salt: salt,
         }
         let row = await new User(user)
         await row.save()
-        await req.login(user, function (err) {
-            if (err) {
-                return next(err)
-            }
-            res.redirect('/')
+        // await req.login(user, function (err) {
+        //     if (err) {
+        //         return next(err)
+        //     }
+        //     res.redirect('/')
+        // })
+        return res.json({
+            msg: 'User Created Successfully',
+            user: user,
         })
     } catch (err) {
         return res.json({ err: err })
