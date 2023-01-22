@@ -1,6 +1,8 @@
 const dotenv = require('dotenv')
 const express = require('express')
 const cors = require('cors')
+const passport = require('passport')
+const session = require('express-session')
 
 const connectDB = require('./config/db')
 
@@ -21,6 +23,9 @@ const authRoutes = require('./routes/auth.routes')
 app.use(express.json({ extended: false }))
 app.use(express.urlencoded({ extended: false }))
 app.use(cors({ origin: true, credentials: true }))
+app.use(session({ secret: 'SECRET' }))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Routes
 app.get('/', (req, res) => res.send('Server up and running'))
