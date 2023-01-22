@@ -1,10 +1,11 @@
 import React from 'react'
+import Navbar from './components/Navbar/Navbar';
 import LoginSignup from './pages/user/LoginSignup/LoginSignup';
 
-const App=()=>{
+function App(){
   return (
     <>
-      <LoginSignup />
+    <Navbar/>
     </>           
   )
 }
