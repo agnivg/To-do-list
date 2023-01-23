@@ -1,0 +1,37 @@
+.LoginSignupWrapper {
+  height: 100vh;
+  background-color: #04c582;
+  display: grid;
+  place-items: center;
+}
+.loginSignupInnerWrapper {
+  background-color: #2e3138;
+  width: 90%;
+  height: 400px;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginSignupNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0.2;
+  font-weight: 500;
+  gap: 10px;
+  text-align: center;
+  color: white;
+}
+.loginSignupNavigation > span {
+  width: 50%;
+  border-radius: 5px;
+  height: 40px;
+  display: grid;
+  place-content: center;
+}
+.loginSignupInnerWrapper > div:nth-child(2) {
+  flex: 0.8;
+}
