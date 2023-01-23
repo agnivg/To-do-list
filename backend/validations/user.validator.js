@@ -1,6 +1,6 @@
 const { body, validationResult } = require('express-validator')
 
-const userRegister = [
+const userRegisterValidation = [
     body('username', 'Username is Required')
         .isLength({ min: 3 })
         .withMessage('Username must be at least 3 characters long'),
@@ -21,8 +21,10 @@ const userRegister = [
     ),
 ]
 
-const userLogin = [
-    body('email').isEmail().withMessage('Email is not valid'),
+const userLoginValidation = [
+    body('username')
+        .isLength({ min: 3 })
+        .withMessage('Username must be at least 3 characters long'),
     body('password')
         .isLength({ min: 6 })
         .withMessage('Password must be at least 6 characters long'),
@@ -42,7 +44,7 @@ const validate = (req, res, next) => {
 }
 
 module.exports = {
-    userRegister,
-    userLogin,
+    userRegisterValidation,
+    userLoginValidation,
     validate,
 }
