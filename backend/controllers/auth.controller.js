@@ -5,38 +5,30 @@ const User = require('../models/user.model')
 
 // Local Strategies
 passport.use(
-    new LocalStrategy(function verify(username, password, cb) {
-        User.findOne({ username: username }, async (err, row) => {
+    new LocalStrategy(function (username, password, done) {
+        User.findOne({ username: username }, function (err, user) {
             if (err) {
-                return cb(err)
+                return done(err)
             }
-            if (!row) {
-                return cb(null, false, { message: 'User does not exist!' })
+            if (!user) {
+                return done(null, false)
             }
-
-            bcrypt.compare(
-                password,
-                row.hashed_password,
-                function (err, result) {
-                    if (err) {
-                        return cb(err)
-                    }
-                    if (!result) {
-                        return cb(null, false, {
-                            message: 'Incorrect password!',
-                        })
-                    }
-                    return cb(null, row)
+            bcrypt.compare(password, user.password, function (err, res) {
+                if (err) {
+                    return done(err)
                 }
-            )
+                if (res === false) {
+                    return done(null, false)
+                }
+                return done(null, user)
+            })
         })
     })
 )
 
+// Serialize and Deserialize User
 passport.serializeUser(function (user, cb) {
-    process.nextTick(function () {
-        cb(null, { id: user.id, username: user.username })
-    })
+    cb(null, user)
 })
 
 passport.deserializeUser(function (user, cb) {
@@ -44,19 +36,6 @@ passport.deserializeUser(function (user, cb) {
         return cb(null, user)
     })
 })
-
-exports.loginUser = passport.authenticate('local', {
-    failureFlash: false,
-    successRedirect: '/',
-    failureRedirect: '/api/auth/login',
-})
-
-exports.logoutUser = async function (req, res) {
-    await req.session.destroy()
-    await req.logout(() => {
-        res.redirect('/api/auth/login')
-    })
-}
 
 exports.signupUser = async function (req, res) {
     const { username, email, password, confirm_password } = req.body
@@ -80,17 +59,47 @@ exports.signupUser = async function (req, res) {
         }
         let row = await new User(user)
         await row.save()
-        // await req.login(user, function (err) {
-        //     if (err) {
-        //         return next(err)
-        //     }
-        //     res.redirect('/')
-        // })
-        return res.json({
-            msg: 'User Created Successfully',
-            user: user,
+        await req.login(user, function (err) {
+            if (err) {
+                return next(err)
+            }
+            // res.redirect('/')
+            return res.json({
+                msg: 'User Created Successfully',
+                user: user,
+            })
         })
     } catch (err) {
         return res.json({ err: err })
     }
 }
+
+exports.loginUser = passport.authenticate('local', {
+    successRedirect: '/api/auth/secure',
+    failureRedirect: '/api/auth/insecure',
+    failureFlash: true,
+})
+
+exports.logoutUser = async function (req, res) {
+    await req.session.destroy()
+    await req.logout(() => {
+        res.redirect('/api/auth/insecure')
+    })
+}
+
+exports.secureUser = async (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.json({ msg: 'You are authenticated' })
+    }
+    return res.json({ msg: 'You are not authenticated' })
+}
+
+exports.insecureUser = (req, res) => {
+    res.json({
+        msg: 'Login Page, Login Failed',
+    })
+}
+
+// exports.checkCurrentUser = (req, res) => {
+//     res
+// }
