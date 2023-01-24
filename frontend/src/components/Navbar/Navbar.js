@@ -5,16 +5,18 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <>
+    <div className="Navbar">
     <nav className="nav-container">
       <ul>
         <li className="logo">
-          <NavLink to="/">AlphaDev</NavLink>
+          <a href="">AlphaDev</a>
         </li>
         <li className="login">
-          <NavLink to="/">Login/SignUp</NavLink>
+          <a href="">Login/SignUp</a>
         </li>
       </ul>
     </nav>
+    </div>
     </>
   );
 }
