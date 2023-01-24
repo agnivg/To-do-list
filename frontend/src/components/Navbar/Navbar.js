@@ -9,10 +9,11 @@ function Navbar() {
     <nav className="nav-container">
       <ul>
         <li className="logo">
-          <a href="">AlphaDev</a>
+          <NavLink to="/">AlphaDev</NavLink>
+          <a href=""></a>
         </li>
         <li className="login">
-          <a href="">Login/SignUp</a>
+          <NavLink to="">Login / Signup</NavLink>
         </li>
       </ul>
     </nav>
