@@ -2,16 +2,13 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
     overflow: hidden;
     background-image: linear-gradient(180deg, rgb(139, 127, 219), rgb(87, 153, 215));
   }
   
   li {
     float: left;
-  }
-  .logo{
-    font-weight: 800;
+    font-size: 20px;
   }
   li a {
     display: block;
@@ -19,14 +16,16 @@ ul {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: large;
-    font-weight: 700;
+    
+  }
+  .logo{
+    font-size: 25px;
+    font-weight: 900;
   }
   .login{
-    font-weight: 500;
     float:right;
   }
   
   .login:hover {
-    background-image: linear-gradient(90deg, rgb(186, 180, 223), rgb(157, 189, 219));
+    font-weight: bolder;
   }
