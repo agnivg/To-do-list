@@ -1,0 +1,35 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(180deg, rgba(0, 22, 9, 0.937), rgb(0, 88, 44));
+  }
+  
+  li {
+    float: left;
+    font-size: 20px;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+  }
+  .logo{
+    font-size: 25px;
+    font-weight: 900;
+  }
+  .home{
+    height: 30px;
+    width: 30px;
+  }
+  .login{
+    float:right;
+  }
+  
+  .login:hover {
+    font-weight: bolder;
+  }
