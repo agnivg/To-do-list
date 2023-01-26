@@ -7,7 +7,7 @@ function LoginSignup() {
   const [isLogin, setLogin] = useState(false);
   return (
     <div className="LoginSignupWrapper">
-      <h1>TO-DO LIST</h1>
+      <h1>{isLogin?"Login":"Sign Up"}</h1>
       <div className="loginSignupInnerWrapper">
         <div className="loginSignupNavigation">
           <span
