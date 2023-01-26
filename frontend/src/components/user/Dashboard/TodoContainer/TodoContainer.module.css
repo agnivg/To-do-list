@@ -1,0 +1,18 @@
+.todoContainerWrapper {
+  flex: 0.8;
+  width: 100%;
+  height: calc(100vh - 60px - 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 10px;
+}
+.todoContainerWrapper>div:nth-child(2){
+  flex: 0.85;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  overflow: auto;
+}
