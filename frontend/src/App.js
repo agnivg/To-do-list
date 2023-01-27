@@ -1,7 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
 import LoginSignup from './pages/user/LoginSignup/LoginSignup';
+import Navbar from './components/Navbar/Navbar'
 import './App.css'
 
 function App() {
@@ -10,7 +9,8 @@ function App() {
     <>
       <div className="App">
       <Navbar/>
-      </div>
+      <LoginSignup />
+      </div>  
     </>
   )
 }

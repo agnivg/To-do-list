@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import Login from "../../../components/user/LoginSignup/Login";
+import Signup from "../../../components/user/LoginSignup/Signup";
+import "./LoginSignup.css";
 
 function LoginSignup() {
-  return <div>Login Signup</div>;
+  const [isLogin, setLogin] = useState(false);
+  return (
+    <div className="LoginSignupWrapper">
+      <h1>{isLogin?"Login":"Sign Up"}</h1>
+      <div className="loginSignupInnerWrapper">
+        <div className="loginSignupNavigation">
+          <span
+            onClick={() => setLogin(true)}
+            style={{
+              boxShadow: `${
+                isLogin ? "0 0px 1px 1px rgb(5, 197, 130,0.5)" : ""
+              }`,
+            }}
+          >
+            Login
+          </span>
+          <span
+            onClick={() => setLogin(false)}
+            style={{
+              boxShadow: `${
+                !isLogin ? "0 0px 1px 1px rgb(5, 197, 130,0.5)" : ""
+              }`,
+            }}
+          >
+            Sign Up
+          </span>
+        </div>
+        <div>{isLogin ? <Login /> : <Signup />}</div>
+      </div>
+    </div>
+  );
 }
 
 export default LoginSignup;
