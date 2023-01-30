@@ -1,6 +1,7 @@
 import React from 'react'
 import LoginSignup from './pages/user/LoginSignup/LoginSignup';
 import Navbar from './components/Navbar/Navbar'
+import ToDos from './components/ToDos/ToDos';
 import './App.css'
 
 function App() {
