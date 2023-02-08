@@ -1,11 +1,47 @@
-.addTodoWrapper {
+.addtodomodalBackgroundMask {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+}
+.addtodomodalForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 300px;
+  max-width: 620px;
   padding: 10px;
+  gap: 10px;
+  position: relative;
+}
+.addtodomodalForm > input {
+  border: 1px solid black;
+  padding: 5px;
+  min-width: 280px;
+  width: 600px;
+  height: 50px;
+  border-radius: 5px;
+}
+.addtodomodalForm > select {
+  border: 1px solid black;
+  padding: 5px;
+  min-width: 280px;
+  width: 600px;
+  height: 50px;
+  border-radius: 5px;
 }
 
-/* CSS */
 .button {
   align-items: center;
   appearance: none;
@@ -51,4 +87,11 @@
 .button:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
+}
+.closeButton {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 20px;
+  cursor: pointer;
 }
