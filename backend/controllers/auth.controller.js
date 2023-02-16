@@ -100,6 +100,10 @@ exports.insecureUser = (req, res) => {
     })
 }
 
-// exports.checkCurrentUser = (req, res) => {
-//     res
-// }
+exports.checkCurrentUser = (req, res) => {
+    const user = req.user
+    if (user) {
+        return res.json({ user: user })
+    }
+    return res.json({ user: null })
+}

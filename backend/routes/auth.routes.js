@@ -1,20 +1,19 @@
 const express = require('express')
-const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const {
-    loginUser,
-    signupUser,
-    logoutUser,
-    secureUser,
-    insecureUser,
-    checkCurrentUser,
-} = require('../controllers/auth.controller')
+    AuthController: {
+        loginUser,
+        signupUser,
+        logoutUser,
+        secureUser,
+        insecureUser,
+        checkCurrentUser,
+    },
+} = require('../controllers')
 
 const {
-    userRegisterValidation,
-    userLoginValidation,
-    validate,
-} = require('../validations/user.validator')
+    UserValidator: { userRegisterValidation, userLoginValidation, validate },
+} = require('../validations')
 
 const router = express.Router()
 
@@ -30,6 +29,6 @@ router.post('/login', userLoginValidation, validate, loginUser)
 router.post('/logout', logoutUser)
 router.post('/secure', secureUser)
 router.post('/insecure', insecureUser)
-// router.get('/checkUser', checkCurrentUser)
+router.get('/checkUser', checkCurrentUser)
 
 module.exports = router
