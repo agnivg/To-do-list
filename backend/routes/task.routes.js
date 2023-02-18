@@ -15,15 +15,16 @@ const {
 } = require('../validations')
 const {
     AuthMiddleware: { isLoggedIn },
+    TaskMiddleware: { isValidUser },
 } = require('../middleware')
 
-// router.use(isLoggedIn)
+router.use(isLoggedIn)
 
-router.post('/create', taskCreateValidation, createTask)
-router.put('/update/:id', taskUpdateValidation, updateTask)
-router.delete('/delete/:id', deleteTask)
-router.get('/get/:id', getTask)
-router.get('/get', getTasks)
-router.put('/:id', updateTaskStatus)
+router.post('/', taskCreateValidation, createTask)
+router.put('/:id', taskUpdateValidation, isValidUser, updateTask)
+router.delete('/:id', isValidUser, deleteTask)
+router.get('/:id', isValidUser, getTask)
+router.get('/', getTasks)
+router.put('/status/:id', isValidUser, updateTaskStatus)
 
 module.exports = router

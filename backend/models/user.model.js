@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Badge = require('./badge.model')
-
 const UserSchema = new Schema({
     username: {
         type: String,
@@ -21,8 +19,7 @@ const UserSchema = new Schema({
         default: 0,
     },
     badges: {
-        type: [Schema.Types.ObjectId],
-        ref: 'Badge',
+        type: [String],
         default: [],
     },
     date: {

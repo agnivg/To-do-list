@@ -1,10 +1,11 @@
-const { Subtask } = require('../models')
+const { User, Subtask } = require('../models')
 
 exports.createSubtask = async (req, res) => {
-    const { description, user, task } = req.body
+    const { description, deadline, user, task } = req.body
     try {
         let subtask = {
             description: description,
+            deadline: deadline,
             user: user,
             task: task,
         }
@@ -21,14 +22,14 @@ exports.createSubtask = async (req, res) => {
 }
 
 exports.updateSubtask = async (req, res) => {
-    const { description, user, task, status } = req.body
+    const { description, deadline, user, task, status } = req.body
     const { id } = req.params
     try {
         let subtask = {
             description: description,
+            deadline: deadline,
             user: user,
             task: task,
-            status: status,
         }
 
         await Subtask.findByIdAndUpdate(id, subtask)
@@ -54,7 +55,7 @@ exports.deleteSubtask = async (req, res) => {
 
 exports.getSubtasks = async (req, res) => {
     try {
-        let rows = await Subtask.find({})
+        let rows = await Subtask.find({ user: req.user._id })
 
         return res.json({ rows: rows })
     } catch (err) {
@@ -78,14 +79,14 @@ exports.getSubtask = async (req, res) => {
 exports.updateSubtaskStatus = async (req, res) => {
     const { id } = req.params
     try {
-        let row = await Subtask.findById(id)
-        let user = req.user
+        let subtask = await Subtask.findById(id)
+        let user = await User.findById(req.user._id)
 
-        row.status = !row.status
+        subtask.status = !subtask.status
 
-        user.points += row.status ? 2 : -2
+        user.points += subtask.status ? 2 : -2
 
-        await row.save()
+        await subtask.save()
         await user.save()
 
         return res.json({ msg: 'Subtask Status Updated Successfully' })

@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const passport = require('passport')
 const session = require('express-session')
+const MongoDBStore = require('connect-mongodb-session')(session)
 
 const connectDB = require('./config/db')
 
@@ -37,14 +38,28 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cors({ origin: true, credentials: true }))
 app.use(
     session({
-        secret: 'SECRET',
-        resave: true,
-        saveUninitialized: true,
-        cookie: { maxAge: 604800000 }, // 1 Week Session
+        secret: 'jhdlskajdkljaslkdjlkasjdalksjddlkjasdlkjasdkjalwkdjalksjdlkajsd',
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoDBStore({
+            uri: process.env.MONGO_URI,
+            collection: 'sessions',
+        }),
     })
 )
 app.use(passport.initialize())
 app.use(passport.session())
+
+// Serialize and Deserialize User
+passport.serializeUser(function (user, cb) {
+    cb(null, user)
+})
+
+passport.deserializeUser(function (user, cb) {
+    process.nextTick(function () {
+        return cb(null, user)
+    })
+})
 
 // Routes
 app.get('/', (req, res) => res.send('Server up and running'))

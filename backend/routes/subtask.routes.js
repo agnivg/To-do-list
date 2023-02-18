@@ -15,17 +15,28 @@ const {
 } = require('../validations')
 const {
     AuthMiddleware: { isLoggedIn },
-    SubtaskMiddleware: { isTaskTypeTeam },
+    SubtaskMiddleware: { isTaskTypeTeam, isValidUser },
 } = require('../middleware')
 
 router.use(isLoggedIn)
-router.use(isTaskTypeTeam)
 
-router.post('/create', subtaskCreateValidation, createSubtask)
-router.put('/update/:id', subtaskUpdateValidation, updateSubtask)
-router.delete('/delete/:id', deleteSubtask)
+router.post(
+    '/',
+    subtaskCreateValidation,
+    isValidUser,
+    isTaskTypeTeam,
+    createSubtask
+)
+router.put(
+    '/:id',
+    subtaskUpdateValidation,
+    isValidUser,
+    isTaskTypeTeam,
+    updateSubtask
+)
+router.delete('/:id', isValidUser, deleteSubtask)
 router.get('/', getSubtasks)
-router.get('/:id', getSubtask)
-router.put('/:id', updateSubtaskStatus)
+router.get('/:id', isValidUser, getSubtask)
+router.get('/status/:id', isValidUser, updateSubtaskStatus)
 
 module.exports = router

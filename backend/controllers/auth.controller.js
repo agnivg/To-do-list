@@ -1,7 +1,7 @@
 const passport = require('passport')
-const LocalStrategy = require('passport-local')
+const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs')
-const User = require('../models/user.model')
+const { User } = require('../models')
 
 // Local Strategies
 passport.use(
@@ -25,17 +25,6 @@ passport.use(
         })
     })
 )
-
-// Serialize and Deserialize User
-passport.serializeUser(function (user, cb) {
-    cb(null, user)
-})
-
-passport.deserializeUser(function (user, cb) {
-    process.nextTick(function () {
-        return cb(null, user)
-    })
-})
 
 exports.signupUser = async function (req, res) {
     const { username, email, password, confirm_password } = req.body
@@ -83,7 +72,7 @@ exports.loginUser = passport.authenticate('local', {
 exports.logoutUser = async function (req, res) {
     await req.session.destroy()
     await req.logout(() => {
-        res.redirect('/api/auth/insecure')
+        res.redirect('/api/auth/login')
     })
 }
 
@@ -100,8 +89,8 @@ exports.insecureUser = (req, res) => {
     })
 }
 
-exports.checkCurrentUser = (req, res) => {
-    const user = req.user
+exports.checkCurrentUser = async (req, res) => {
+    const user = await User.findById(req.user._id)
     if (user) {
         return res.json({ user: user })
     }

@@ -8,6 +8,15 @@ const SubtaskSchema = new Schema({
         type: String,
         required: true,
     },
+    deadline: {
+        type: Date,
+        required: true,
+    },
+    status: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',

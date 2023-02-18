@@ -10,25 +10,27 @@ const {
         checkCurrentUser,
     },
 } = require('../controllers')
-
 const {
     UserValidator: { userRegisterValidation, userLoginValidation, validate },
 } = require('../validations')
+const {
+    AuthMiddleware: { isLoggedIn },
+} = require('../middleware')
 
 const router = express.Router()
-
-router.use(passport.initialize())
-router.use(passport.session())
 
 router.get('/', (req, res) => {
     res.send('Auth route')
 })
+router.get('/login', (req, res) => {
+    res.send('Login route')
+})
 
 router.post('/register', userRegisterValidation, validate, signupUser)
 router.post('/login', userLoginValidation, validate, loginUser)
-router.post('/logout', logoutUser)
-router.post('/secure', secureUser)
-router.post('/insecure', insecureUser)
-router.get('/checkUser', checkCurrentUser)
+router.get('/logout', logoutUser)
+router.get('/secure', secureUser)
+router.get('/insecure', insecureUser)
+router.get('/check', isLoggedIn, checkCurrentUser)
 
 module.exports = router
