@@ -28,8 +28,8 @@
 
 ### Additional features
 
--   [ ] Rewards for completing tasks
--   [ ] Specifying type of task- personal or professional or team
+-   [x] Rewards for completing tasks
+-   [x] Specifying type of task- personal or professional or team
 -   [ ] Sending reminder notifications based on deadline given
 -   [ ] Collaborative to-do's for team tasks that can be shared between people, since collaborative to-do's can be shared, others can also add subtasks in the main to-do.
         **_Note:_** The frontend & backend must be implemented accordingly and also collaborative to-do's are allowed only for type team to-do's
