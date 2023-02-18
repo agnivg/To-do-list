@@ -14,6 +14,14 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    points: {
+        type: Number,
+        default: 0,
+    },
+    badges: {
+        type: [String],
+        default: [],
+    },
     date: {
         type: Date,
         default: Date.now,

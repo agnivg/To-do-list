@@ -1,20 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
+const Task = require('./task.model')
 const User = require('./user.model')
 
-const TaskSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-    },
+const SubtaskSchema = new Schema({
     description: {
         type: String,
-        required: true,
-    },
-    type: {
-        type: String,
-        enum: ['personal', 'professional', 'team'],
         required: true,
     },
     deadline: {
@@ -31,10 +22,15 @@ const TaskSchema = new Schema({
         ref: 'User',
         required: true,
     },
+    task: {
+        type: Schema.Types.ObjectId,
+        ref: 'Task',
+        required: true,
+    },
     date: {
         type: Date,
         default: Date.now,
     },
 })
 
-module.exports = Task = mongoose.model('tasks', TaskSchema)
+module.exports = Subtask = mongoose.model('subtasks', SubtaskSchema)
