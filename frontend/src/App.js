@@ -1,19 +1,32 @@
-import React from 'react'
-import LoginSignup from './pages/user/LoginSignup/LoginSignup';
-import Navbar from './components/Navbar/Navbar'
-import './App.css'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Login, Signup, Home } from "./pages";
+import { Provider } from "react-redux";
+import { PrivateRoute } from "./components";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "./app/store";
 
 function App() {
-  console.log('App component is rendered')
   return (
-    <>
-      <div className="App">
-      <Navbar/>
-      <LoginSignup />
-      </div>  
-    </>
-  )
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route
+              path="/"
+              element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
+  );
 }
-
 
 export default App;

@@ -1,5 +1,8 @@
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
+const {
+    BadgeSeeder: { seedBadges },
+} = require('../seeders')
 
 dotenv.config({ path: './env/.env' })
 
@@ -16,6 +19,7 @@ const connectDB = () => {
     mongoose
         .connect(MONGO_URI, options)
         .then(() => console.log('Database connected'))
+        .then(seedBadges())
         .catch((err) => console.log(err))
 }
 

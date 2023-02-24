@@ -32,7 +32,7 @@ const badges = [
 ]
 
 exports.seedBadges = async () => {
-    await Badge.deleteMany({})
+    await Badge.deleteMany()
     await Badge.insertMany(badges)
 
     console.log('Badges Seeded')

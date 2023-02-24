@@ -1,0 +1,171 @@
+.signup-container {
+  background-color: var(--graybg);
+  height: 100vh;
+  display: flex;
+}
+.signup-left-container {
+  width: 40%;
+  height: 100%;
+  background-color: var(--blackbg);
+}
+.signup-logo {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.signup-logo > img {
+  width: 1.9rem;
+}
+.signup-logo > h3 {
+  font-weight: bolder;
+  color: var(--white);
+}
+
+.signup-right-container {
+  width: 60%;
+  height: 100%;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-welcome-text {
+  margin-top: 6.5rem;
+  margin-bottom: 3rem;
+}
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.form-input > input {
+  margin-top: 0.5rem;
+  display: flex;
+  background-color: var(--graybg);
+  border: 2px solid var(--white);
+  border-radius: 9px;
+  height: 2.5rem;
+  padding: 0.5rem;
+  color: var(--white);
+  width: 100%;
+}
+.form-input {
+  width: 100%;
+}
+.submit-btn {
+  margin-top: 30px;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+.submit-btn > button {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border: none;
+  font-weight: bolder;
+  cursor: pointer;
+  width: 80%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+.signup-form {
+  padding: 10px;
+}
+
+.points-tile-card {
+  border-radius: 10px;
+  text-align: center;
+  background-color: var(--white);
+  width: 259px;
+  height: 249px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3px 7px;
+}
+
+.preview-section {
+  margin-top: 2rem;
+  position: relative;
+  padding: 50px;
+  background-image: url("https://res.cloudinary.com/dis1ibarq/image/upload/v1677237810/Desktop_-_3_irpgov.jpg");
+  background-repeat: no-repeat;
+  background-position: 143px 258px;
+  background-size: 67%;
+  height: 80%;
+}
+.preview-todo-card {
+  position: relative;
+  top: -166px;
+  left: 188px;
+  background-color: var(--white);
+  color: var(--blackbg);
+  display: flex;
+  justify-content: space-between;
+  width: 240px;
+  padding: 10px;
+  border-radius: 13px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.preview-todo-card > button {
+  border: none;
+  font-weight: bolder;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.2rem 1rem;
+  border-radius: 4px;
+}
+.signup-logo-mobile {
+  display: none;
+}
+.signup-link > a {
+  color: var(--blue);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .signup-welcome-text {
+    margin-bottom: 2rem;
+    font-size: 0.7rem;
+  }
+  .signup-welcome-text > div {
+    font-size: xx-small;
+  }
+  .signup-form-container {
+    gap: 0.5rem;
+  }
+  .signup-form {
+    padding: 5px;
+  }
+  .signup-left-container {
+    display: none;
+  }
+  .signup-container {
+    justify-content: center;
+  }
+  .signup-logo-mobile {
+    position: absolute;
+    top: 9px;
+    left: 17px;
+    display: flex;
+    align-items: center;
+  }
+  .signup-welcome-text {
+    margin-top: 6rem;
+  }
+  .signup-welcome-text > h1 {
+    font-size: 1rem;
+  }
+  .signup-welcome-text > p {
+    font-size: 0.8rem;
+  }
+}

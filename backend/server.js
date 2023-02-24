@@ -25,12 +25,6 @@ const {
     BadgeRoutes,
 } = require('./routes')
 
-// Seeders
-const {
-    BadgeSeeder: { seedBadges },
-} = require('./seeders')
-
-seedBadges()
 
 // Middleware
 app.use(express.json({ extended: false }))
