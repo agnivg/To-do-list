@@ -1,6 +1,20 @@
-*{
-  margin:0;
+:root {
+  --graybg: #323435;
+  --blackbg: #000000;
+  --blue: #3661eb;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+  padding-left: 5px;
+  margin: 0;
 }
