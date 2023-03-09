@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { PrivateRoute } from "./components";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "./app/store";
+import TodoDash from "./components/Dasboard/Dashboard";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<TodoDash />} />
             <Route
               path="/"
               element={
