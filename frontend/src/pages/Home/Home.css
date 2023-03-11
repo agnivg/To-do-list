@@ -1,0 +1,8 @@
+.dashboardWrapper {
+  display: flex;
+  height: 100vh;
+}
+.dashboardContentWrapper {
+  flex: 0.85;
+  background-color: var(--graybg);
+}

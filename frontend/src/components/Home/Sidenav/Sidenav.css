@@ -1,0 +1,4 @@
+.sidenavWrapper {
+  flex: 0.15;
+  background-color: var(--blackbg);
+}
