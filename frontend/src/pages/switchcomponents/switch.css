@@ -1,0 +1,136 @@
+.my-details-1{
+    position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 24rem;
+    top: 21.5rem;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: #FFFFFF;
+    cursor: pointer;
+    }
+    .my-details-2
+    {
+        position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 24rem;
+    top: 21.5rem;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    }
+    
+    .security-1
+    {
+        position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 37rem;
+    top: 21.5rem;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    }
+    
+    .security-2{
+        position: absolute;
+        width: 124px;
+        height: 24px;
+        left: 37rem;
+        top: 21.5rem;
+        
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+        cursor: pointer;
+    }
+    
+    .activity
+    {
+        position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 50rem;
+    top: 21.5rem;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    }
+    .badges
+    {
+        position: absolute;
+    width: 124px;
+    height: 24px;
+    left: 61rem;
+    top: 21.5rem;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    
+     color: rgba(255, 255, 255, 0.5); 
+    cursor: pointer;
+    }
+    .light-line{
+     position: absolute;
+    width: 1045.01px;
+    height: 0px;
+    left: 24rem;
+    top: 382px;
+    
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    }
+    
+    
+    
+    
+    .dark-line-1
+    {
+        position: absolute;
+    width: 125px;
+    height: 0px;
+    left: 24rem;
+    top: 382px;
+    
+    border: 3px solid #FFFFFF;
+    
+    }
+    
+    .dark-line-2
+    {
+        position: absolute;
+        width: 112px;
+        height: 0px;
+        left: 36.5rem;
+        top: 382px;
+        
+        border: 3px solid #FFFFFF;
+    
+    }

@@ -1,0 +1,452 @@
+
+
+
+  
+
+
+
+.container{
+    display: flex;
+   /* height: 100vh;*/
+    background-color: var(--graybg);
+   
+}
+
+.profile-details{
+    position: relative;
+width: 84%;
+/*height: 100vh;*/
+height: 1024px;
+display: flex;
+flex-direction: column;
+/*background-color: var(--graybg);*/
+}
+
+.top-container{
+   
+    height: 20%;
+    background: linear-gradient(269.92deg, rgba(255, 255, 255, 0.95) -88.39%, rgba(255, 255, 255, 0) 86.79%);
+    background-blend-mode: soft-light;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+    width:100%;
+}
+
+.bottom-container{
+    height: 80%;
+    background-color: var(--graybg);
+}
+
+
+.rectangle5{
+/*position: relative;*/
+
+width:16%;
+
+height: 1024px;
+left: 0%;
+top: 0%;
+
+background: #000000;
+}
+
+.todo-pic{
+    
+       
+        width: 2.9rem;
+        left: 1rem;
+        position: absolute;
+        top: 1rem;
+      
+}
+
+.todo-list {
+    position: absolute;
+    width: 111px;
+    height: 26px;
+    left: 80px;
+    top: 24px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    
+    color: #FFFFFF;
+    
+  }
+
+  .dashboard{
+    position: absolute;
+width: 98px;
+height: 24px;
+left: 84px;
+top: 126px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+opacity: 0.5;
+  }
+
+.dashboard-picture{
+    position: absolute;
+width: 34px;
+height: 34px;
+left: 33px;
+top: 120px;
+
+background: url(Content.png);
+opacity: 0.5;
+}
+
+.create-task
+{
+    position: absolute;
+width: 120px;
+height: 19px;
+left: 84px;
+top: 198px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+opacity: 0.5;
+}
+
+.create-task-picture
+{
+    position: absolute;
+width: 34px;
+height: 34px;
+left: 32px;
+top: 192px;
+
+background: url(Plus.png);
+opacity: 0.5;
+}
+.store{
+    
+position: absolute;
+width: 119px;
+height: 24px;
+left: 85px;
+top: 266px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+
+opacity: 0.5;
+}
+
+.store-picture{
+    position: absolute;
+    top: 16.06rem;
+    left: 2.06rem;
+    width: 2.56rem;
+    height: 2.56rem;
+    overflow: hidden;
+    opacity: 0.5;
+    background: url("shopstoreecommercesvgrepocom-1.svg");
+}
+.profile{
+    left: 5.31rem;
+    font-size: var(--font-size-sm);
+    display: inline-block;
+    width: 7.44rem;
+
+
+    position: absolute;
+    top: 20.5rem;
+    height: 1.5rem;
+
+}
+.profile-image{
+    left: 2.69rem;
+  width: 1.5rem;
+  overflow: hidden;
+
+
+  position: absolute;
+  top: 20.5rem;
+  height: 1.5rem;
+    background: url("badgesstarsvgrepocom-1.svg");
+}
+.profile-background{
+    position: absolute;
+width: 202px;
+height: 39px;
+left: 22px;
+top: 319px;
+
+background: #3661EB;
+border-radius: 8px
+}
+.line1{
+    position: absolute;
+width: 171.01px;
+height: 0px;
+left: 3rem;
+top: 58.5rem;
+
+border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.logout{
+    position: absolute;
+width: 119px;
+height: 24px;
+left: 7rem;
+top: 60rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #FFFFFF;
+cursor: pointer;
+opacity: 0.9;
+}
+
+.logout-picture{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    left: 4rem;
+    top: 59.5rem;
+    cursor: pointer;
+    background: url(Logout\ Rounded\ Up.png);
+    opacity: 0.9; 
+}
+
+.profile-picture-box{
+   
+position: absolute;
+top: 8.88rem;
+left: 11.06rem;
+width: 11.44rem;
+height: 11.44rem;
+object-fit: cover;
+ background: url("Ellipse\ 18.png"); 
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.profile-name{
+    position: absolute;
+width: 179px;
+height: 35px;
+left: 25rem;
+top: 13.5rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+
+color: #FFFFFF;
+
+}
+.profile-email{
+    position: absolute;
+width: 298px;
+height: 33px;
+left: 24rem;
+top: 16.2rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 27px;
+
+color: rgba(255, 255, 255, 0.75);
+
+}
+
+
+.top-images{
+    display: flex;
+    position: absolute;
+    height: min-content;
+    width: min-content;
+    margin-left: 5rem;
+    top:1.5rem;
+    left:-16rem;
+   
+}
+.ellipse-6{
+    position: absolute;
+width: 47px;
+height: 40px;
+left: 1215px;
+top: 17px;
+
+background: #FFFFFF;
+background: url("ellipse-6.svg");
+}
+
+.ellipse-6-image{
+   position: absolute;
+  /*  left: 1232px;
+    right: 190px;
+    top: 28px;
+    bottom: 980px;
+    overflow: hidden;
+background: #000000; 
+  background: url("Vector\ \(2\).png");
+  background-image:url("bellpic.png") ;*/
+  left:77rem;
+  top:1.7rem;
+}
+
+.ellipse-5{
+    position: absolute;
+    width: 47px;
+    height: 40px;
+    left: 1276px;
+    top: 17px;
+    
+    background: #FFFFFF;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    background: url("Ellipse\ 5.png"); 
+}
+
+
+.ellipse-5-image{
+    position: absolute;
+width: 26px;
+height: 18px;
+left: 1289px;
+top: 26px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #000000;
+
+}
+.last-image-of-1st-rectangle{
+    position: absolute;
+width: 40px;
+height: 40px;
+left: 1337px;
+top: 17px;
+
+background: url('mubariz-mehdizadeh-Py8F6-hRn5o-unsplash\ 1.png');
+border-radius: 50px;
+} 
+
+
+
+
+.my-details{
+    position: absolute;
+width: 124px;
+height: 24px;
+left: 320px;
+top: 337px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+color: #FFFFFF;
+cursor: pointer;
+}
+
+.security
+{
+    position: absolute;
+width: 124px;
+height: 24px;
+left: 494px;
+top: 337px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+color: rgba(255, 255, 255, 0.5);
+cursor: pointer;
+}
+
+.activity
+{
+    position: absolute;
+width: 124px;
+height: 24px;
+left: 668px;
+top: 337px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+color: rgba(255, 255, 255, 0.5);
+cursor: pointer;
+}
+.badges
+{
+    position: absolute;
+width: 124px;
+height: 24px;
+left: 842px;
+top: 337px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+
+ color: rgba(255, 255, 255, 0.5); 
+cursor: pointer;
+}
+.light-line{
+    position: absolute;
+width: 1045.01px;
+height: 0px;
+left: 312px;
+top: 382px;
+
+border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.dark-line
+{
+    position: absolute;
+width: 112px;
+height: 0px;
+left: 312px;
+top: 382px;
+
+border: 3px solid #FFFFFF;
+
+}
