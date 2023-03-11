@@ -1,0 +1,164 @@
+
+.password{
+    position: absolute;
+width: 162px;
+height: 41px;
+left: 24rem;
+top: 408px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+
+color: rgba(255, 255, 255, 0.75);
+}
+
+.below-password{
+    position: absolute;
+width: 483px;
+height: 24px;
+left: 24rem;
+top: 454px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: rgba(255, 255, 255, 0.75);
+
+}
+
+.current-password{
+    position: absolute;
+width: 210px;
+height: 32px;
+left: 24rem;
+top: 32.5rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+}
+
+.current-password-text{
+    
+box-sizing: border-box;
+
+position: absolute;
+width: 594px;
+height: 45px;
+left: 50rem;
+top: 32.5rem;
+
+border: 1px solid #FFFFFF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+border-radius: 10px;
+}
+
+.new-password{
+    position: absolute;
+width: 179px;
+height: 32px;
+left: 24rem;
+top: 39rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+
+}
+
+.new-password-text{
+    box-sizing: border-box;
+
+position: absolute;
+width: 594px;
+height: 45px;
+left: 50rem;
+top: 39rem;
+
+border: 1px solid #FFFFFF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+border-radius: 10px;
+}
+
+.confirm{
+    position: absolute;
+width: 186px;
+height: 32px;
+left: 24rem;
+top: 46rem;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+
+.confirm-text{
+    
+box-sizing: border-box;
+
+position: absolute;
+width: 594px;
+height: 45px;
+left: 50rem;
+top: 46rem;
+
+border: 1px solid #FFFFFF;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+border-radius: 10px;
+}
+
+
+.update-box{
+    position: absolute;
+width: 149px;
+height: 40px;
+left:24rem;
+top: 59.5rem;
+cursor: pointer;
+background: #3661EB;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 19px;
+}
+
+
+.clear-box{
+    box-sizing: border-box;
+
+position: absolute;
+width: 120px;
+height: 35px;
+left: 36.5rem;
+top: 59.7rem;
+cursor: pointer;
+border: 1px solid rgba(255, 255, 255, 0.5);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 5px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+color: rgba(7, 7, 7, 0.5);
+}
