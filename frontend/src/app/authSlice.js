@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import react-cookie
-import Cookie from "react-cookie"
+import Cookie from "react-cookie";
 import axios from "axios";
 
-const LOGIN_URL = "http://localhost:5000/api/auth/login";
-const SIGNUP_URL = "http://localhost:5000/api/auth/register";
-const CHECK_USER_URL = "http://localhost:5000/api/auth/check";
-const LOGOUT_URL = "http://localhost:5000/api/auth/logout";
+const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:1337/api";
+const LOGIN_URL = `${url}/auth/login`;
+const SIGNUP_URL = `${url}/auth/register`;
+const CHECK_USER_URL = `${url}/auth/check`;
+const LOGOUT_URL = `${url}/auth/logout`;
 
 const initialState = {
   isLoading: false,
@@ -109,18 +110,18 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.error;
       })
-      .addCase(logout.pending,(state)=>{
+      .addCase(logout.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(logout.fulfilled,(state,action)=>{
+      .addCase(logout.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = null;
         state.isAuthenticated = false;
       })
-      .addCase(logout.rejected,(state,action)=>{
+      .addCase(logout.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error;
-      })
+      });
   },
 });
 
