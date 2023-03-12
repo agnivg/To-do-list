@@ -3,6 +3,7 @@
   --blackbg: #000000;
   --blue: #3661eb;
   --white: #ffffff;
+  --greylight:rgba(217, 217, 217, 0.5);
 }
 
 * {

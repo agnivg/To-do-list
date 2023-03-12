@@ -5,6 +5,7 @@ import { svg1 } from "../../assets";
 import "./Home.css";
 import Sidenav from "../../components/Home/Sidenav/Sidenav";
 import { Outlet } from "react-router-dom";
+import Header from "../../components/Home/Header/Header";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Home = () => {
       </div> */}
       <Sidenav />
       <div className="dashboardContentWrapper">
+        <Header />
         <Outlet />
       </div>
     </div>

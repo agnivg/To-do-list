@@ -56,7 +56,7 @@ const Sidenavsingle = ({ Icon, name, route }) => {
         return {
           backgroundColor: isActive ? "var(--blue)" : "",
           fontWeight: isActive ? "bold" : "",
-          color: isActive ? "var(--white)" : "var(--graybg)",
+          color: isActive ? "var(--white)" : "var(--greylight)",
         };
       }}
     >
