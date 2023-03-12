@@ -60,7 +60,7 @@ const Sidenavsingle = ({ Icon, name, route }) => {
         };
       }}
     >
-      <Icon size={20}/>
+      <Icon size={30} />
       {name}
     </NavLink>
   );
