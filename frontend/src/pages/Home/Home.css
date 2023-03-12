@@ -6,3 +6,15 @@
   flex: 0.85;
   background-color: var(--graybg);
 }
+.profile{
+  left: 5.31rem;
+  font-size: var(--font-size-sm);
+  display: inline-block;
+  width: 7.44rem;
+
+color: #fffff;
+  position: absolute;
+  top: 20.5rem;
+  height: 1.5rem;
+
+}
