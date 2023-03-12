@@ -4,9 +4,8 @@ const {
   BadgeSeeder: { seedBadges },
 } = require("../seeders");
 
- dotenv.config({ path: './env/.env' })
- //dotenv.config();
-
+// dotenv.config({ path: './env/.env' })
+dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -25,4 +24,4 @@ const connectDB = () => {
     .catch((err) => console.log(err));
 };
 
-module.exports = connectDB;
+module.exports = connectDB;;

@@ -2,10 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { checkUser, logout } from "../../app/authSlice";
 import { svg1 } from "../../assets";
-//import "./Home.css";
+import "./Home.css";
 import Sidenav from "../../components/Home/Sidenav/Sidenav";
 import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Header from "../../components/Home/Header/Header";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -27,11 +27,9 @@ const Home = () => {
         <h4>ID: {user?.user?._id}</h4>
         <h4>Name: {user?.user?.username}</h4>
       </div> */}
-       <div className="profile">
-       <Link to="/profile">Profile</Link>
-      </div>
       <Sidenav />
       <div className="dashboardContentWrapper">
+        <Header />
         <Outlet />
       </div>
     </div>
