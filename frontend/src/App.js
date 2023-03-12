@@ -9,8 +9,6 @@ import Dashboard from "./pages/Dashboard";
 import Createtask from "./pages/Createtask";
 import Store from "./pages/Store";
 import Profile from "./pages/Profile";
-import Afterlogin from "./pages/Afterlogin/Afterlogin";
-
 
 function App() {
   return (
@@ -21,7 +19,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route
-              path="/dashboard"
+              path="/"
               element={
                 <PrivateRoute>
                   <Home />

@@ -1,4 +1,31 @@
 .sidenavWrapper {
   flex: 0.15;
   background-color: var(--blackbg);
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 50px;
+}
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  gap: 20px;
+}
+
+.sidenavNavigation {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.navsingle {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 15px;
 }

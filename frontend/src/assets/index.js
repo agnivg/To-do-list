@@ -1,4 +1,4 @@
-import svg1 from "./todoTick.svg";
-import svg2 from "./trophy.svg";
+import todoTick from "./todoTick.svg";
+import trophy from "./trophy.svg";
 
-export { svg1, svg2 };
+export { todoTick, trophy };
